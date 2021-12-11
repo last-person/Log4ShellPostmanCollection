@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "d42e02bc-2b60-436c-98ce-1c683f7d9b2c",
+		"name": "Log4Shell",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "Headers",
+					"item": [
+						{
+							"name": "UserAgent",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"user-agent": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "User-Agent",
+										"value": "{{vulnString}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{underTest}}",
+									"host": [
+										"{{underTest}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Accept-Encoding",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept-encoding": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Encoding",
+										"value": "{{vulnString}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{underTest}}",
+									"host": [
+										"{{underTest}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Connection",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"user-agent": true,
+									"connection": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Connection",
+										"value": "{{vulnString}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{underTest}}",
+									"host": [
+										"{{underTest}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Accept",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "{{vulnString}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{underTest}}",
+									"host": [
+										"{{underTest}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "queryParam",
+					"item": [
+						{
+							"name": "queryParam",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{underTest}}?test={{vulnString}}",
+									"host": [
+										"{{underTest}}"
+									],
+									"query": [
+										{
+											"key": "test",
+											"value": "{{vulnString}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Simple get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{underTest}}",
+					"host": [
+						"{{underTest}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
